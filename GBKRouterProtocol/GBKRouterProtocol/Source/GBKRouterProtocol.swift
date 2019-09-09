@@ -16,7 +16,7 @@ public protocol GBKRouterProtocol {
 }
 
 /// MARK: - Base methods
-extension GBKRouterProtocol {
+public extension GBKRouterProtocol {
     
     init(in context: Context?) {
         self.init()

@@ -9,7 +9,7 @@
 import UIKit
 
 /// MARK: - UIViewController
-extension GBKRouterProtocol where Context == UIViewController {
+public extension GBKRouterProtocol where Context == UIViewController {
     
     func present(controller: UIViewController, animated: Bool = true, complate: (() -> ())? = nil) {
         context?.present(controller, animated: animated, completion: complate)

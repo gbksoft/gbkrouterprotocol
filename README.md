@@ -50,17 +50,17 @@ import GBKRouterProtocol
 ```
 ### Naming
 
->  Неймінг який потрібно використовувати для Router+Storyboard:
->  - <Modul Name>Router.swift
->  - <Modul Name>.storyboard
+Неймінг який потрібно використовувати для Router+Storyboard:
+- #Modul Name>Router.swift
+- <Modul Name>.storyboard
 
->  Наприклад:
+> Наприклад:
 >  - AuthRouter.swift
 >  - Auth.storyboard
 
 ### Roter + Storyboard
 
-В Storyboard в View Controller назва класу і Storyboard ID мають бути однакові. Наприклад: LoginViewController.
+В Storyboard в View Controller назва Class і Storyboard ID мають бути однакові. Наприклад: LoginViewController.
 ![DEV INFO MODE iOS](http://gbksoft.net/downloads/zakhliupanyi-av/routerinstoryboard.png)
 
 ### Code

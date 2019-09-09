@@ -9,7 +9,7 @@
 import UIKit
 
 /// MARK: - UINavigationController
-extension GBKRouterProtocol where Context == UINavigationController {
+public extension GBKRouterProtocol where Context == UINavigationController {
     
     func push(controller: UIViewController, animated: Bool = true) {
         context?.pushViewController(controller, animated: animated)
