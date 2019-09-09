@@ -12,7 +12,6 @@ import UIKit
 public protocol GBKRouterProtocol {
     associatedtype Context
     init()
-    init(in context: Context?)
     var context: Context? { set get }
 }
 

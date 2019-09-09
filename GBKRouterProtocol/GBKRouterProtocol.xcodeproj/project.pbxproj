@@ -62,8 +62,8 @@
 		4D2FF52F2326628900ECFB09 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				4D2FF5302326628900ECFB09 /* GBKRouterProtocol+ViewController.swift */,
 				4D2FF5312326628900ECFB09 /* GBKRouterProtocol.swift */,
+				4D2FF5302326628900ECFB09 /* GBKRouterProtocol+ViewController.swift */,
 				4D2FF5322326628900ECFB09 /* GBKRouterProtocol+NavigationController.swift */,
 			);
 			path = Source;
