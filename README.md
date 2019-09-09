@@ -51,8 +51,8 @@ import GBKRouterProtocol
 ### Naming
 
 Неймінг який потрібно використовувати для Router+Storyboard:
-- #Modul Name>Router.swift
-- <Modul Name>.storyboard
+- (Modul_Name)Router.swift
+- (Modul_Name).storyboard
 
 > Наприклад:
 >  - AuthRouter.swift
@@ -61,11 +61,11 @@ import GBKRouterProtocol
 ### Roter + Storyboard
 
 В Storyboard в View Controller назва Class і Storyboard ID мають бути однакові. Наприклад: LoginViewController.
-![DEV INFO MODE iOS](http://gbksoft.net/downloads/zakhliupanyi-av/routerinstoryboard.png)
+![ROUTER PROTOCOL iOS](http://gbksoft.net/downloads/zakhliupanyi-av/routerinstoryboard.png)
 
 ### Code
 
-Далі в файлі <Modul Name>Router.swift описуємо реалізацію:
+Далі в файлі (Modul_Name)Router.swift описуємо реалізацію:
 
 ```swift
 import UIKit
@@ -89,6 +89,7 @@ struct AuthRouter: GBKRouterProtocol {
 AuthRouter(in: self).openLogin()
 ```
 >  self - це поточний View Controller.
+
 
 ## To Do
 - Зробити extension для UITabBarController
