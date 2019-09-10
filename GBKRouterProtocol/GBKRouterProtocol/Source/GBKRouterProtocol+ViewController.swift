@@ -9,14 +9,14 @@
 import UIKit
 
 /// MARK: - UIViewController
-public extension GBKRouterProtocol where Context == UIViewController {
+public extension GBKRouterProtocol where Context: UIViewController {
     
     func present(controller: UIViewController, animated: Bool = true, complate: (() -> ())? = nil) {
-        context?.present(controller, animated: animated, completion: complate)
+        context.present(controller, animated: animated, completion: complate)
     }
     
     func dismiss(animated: Bool = true, complate: (() -> ())? = nil) {
-        context?.dismiss(animated: animated, completion: complate)
+        context.dismiss(animated: animated, completion: complate)
     }
     
 }

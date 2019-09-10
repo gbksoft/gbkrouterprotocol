@@ -10,15 +10,15 @@ import UIKit
 
 /// MARK: - GBK Router Protocol
 public protocol GBKRouterProtocol {
-    associatedtype Context
+    associatedtype Context = UIViewController
     init()
-    var context: Context? { set get }
+    var context: Context { set get }
 }
 
 /// MARK: - Base methods
 public extension GBKRouterProtocol {
     
-    init(in context: Context?) {
+    init(in context: Context) {
         self.init()
         self.context = context
     }

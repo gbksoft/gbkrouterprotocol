@@ -2,10 +2,16 @@
 
 Базова логіка для Router навігації у застосуванні.
 
+- [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Use](#use)
 - [To Do](#to-do)
+
+## Features
+
+- [x] Розширення для UIViewController
+- [x] Розширення для UINavigationController
 
 ## Requirements
 
@@ -21,7 +27,7 @@
 $ gem install cocoapods
 ```
 
-To integrate GBKDevInfoMode into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate GBKRouterProtocol into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
@@ -67,20 +73,43 @@ import GBKRouterProtocol
 
 Далі в файлі (Modul_Name)Router.swift описуємо реалізацію:
 
+Якщо context - UIViewController.
+
 ```swift
 import UIKit
 import GBKRouterProtocol
 
 struct AuthRouter: GBKRouterProtocol {
 
-    var context: UIViewController?
+    var context: UIViewController
 
     init() {}
 
     func openLogin() {
-        present(controller: getController(type: LoginViewController.self)!)
+        let loginController = getController(type: LoginViewController.self)!
+        present(controller: loginController)
     }
 }
+```
+
+Якщо context - UINavigationController.
+
+```swift
+import UIKit
+import GBKRouterProtocol
+
+struct AuthRouter: GBKRouterProtocol {
+
+    var context: UINavigationController
+
+    init() {}
+
+    func openLogin() {
+        let loginController = getController(type: LoginViewController.self)!
+        push(controller: loginController)
+    }
+}
+
 ```
 
 Далі в коді для відкриття екрану Login пишемо:

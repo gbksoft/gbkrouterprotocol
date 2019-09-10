@@ -9,21 +9,21 @@
 import UIKit
 
 /// MARK: - UINavigationController
-public extension GBKRouterProtocol where Context == UINavigationController {
+public extension GBKRouterProtocol where Context: UINavigationController {
     
     func push(controller: UIViewController, animated: Bool = true) {
-        context?.pushViewController(controller, animated: animated)
+        context.pushViewController(controller, animated: animated)
     }
     
     func popController(animated: Bool = true) {
-        _ = context?.popViewController(animated: animated)
+        _ = context.popViewController(animated: animated)
     }
     
     func popToRootController(animated: Bool = true) {
-        _ = context?.popToRootViewController(animated: animated)
+        _ = context.popToRootViewController(animated: animated)
     }
     
     func popTo(controller: UIViewController, animated: Bool = true) {
-        _ = context?.popToViewController(controller, animated: animated)
+        _ = context.popToViewController(controller, animated: animated)
     }
 }
