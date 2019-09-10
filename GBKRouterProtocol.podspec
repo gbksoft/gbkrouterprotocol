@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name          = "GBKRouterProtocol"
-  spec.version       = "0.2"
+  spec.version       = "0.3"
   spec.summary       = "Logic for Router in application."
   spec.license       = 'MIT'
   spec.homepage      = "https://gbksoft.com/"

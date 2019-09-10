@@ -12,13 +12,16 @@ import UIKit
 public protocol GBKRouterProtocol {
     associatedtype Context = UIViewController
     init()
-    var context: Context { set get }
+    var context: Context! { set get }
 }
 
 /// MARK: - Base methods
 public extension GBKRouterProtocol {
     
-    init(in context: Context) {
+    init(in context: Context?) {
+        guard let context = context else {
+            fatalError("Context is null")
+        }
         self.init()
         self.context = context
     }

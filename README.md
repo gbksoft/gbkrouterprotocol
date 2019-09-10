@@ -81,7 +81,7 @@ import GBKRouterProtocol
 
 struct AuthRouter: GBKRouterProtocol {
 
-    var context: UIViewController
+    var context: UIViewController!
 
     init() {}
 
@@ -100,7 +100,7 @@ import GBKRouterProtocol
 
 struct AuthRouter: GBKRouterProtocol {
 
-    var context: UINavigationController
+    var context: UINavigationController!
 
     init() {}
 
@@ -109,13 +109,16 @@ struct AuthRouter: GBKRouterProtocol {
         push(controller: loginController)
     }
 }
-
 ```
 
 Далі в коді для відкриття екрану Login пишемо:
 
 ```swift
-AuthRouter(in: self).openLogin()
+// For UIViewController
+AuthRouter(in: self).openLogin().
+
+// For UINavigationController
+AuthRouter(in: navigationController).openLogin()
 ```
 >  self - це поточний View Controller.
 
