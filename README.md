@@ -1,6 +1,6 @@
 # GBKRouterProtocol
 
-Базова логіка для Router навігації у застосуванні.
+Router based navigation solution for iOS application
 
 - [Features](#features)
 - [Requirements](#requirements)
@@ -10,8 +10,8 @@
 
 ## Features
 
-- [x] Розширення для UIViewController
-- [x] Розширення для UINavigationController
+- [x] extension for UIViewController
+- [x] extension for UINavigationController
 
 ## Requirements
 
@@ -20,23 +20,10 @@
 ## Installation
 
 ### CocoaPods
-
-[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
-
-```bash
-$ gem install cocoapods
-```
-
 To integrate GBKRouterProtocol into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '10.0'
-use_frameworks!
-
-target '<Your Target Name>' do
-    pod 'GBKRouterProtocol', :git => 'git@gitlab.gbksoft.net:gbksoft-mobile-department/ios/gbkrouterprotocol.git'
-end
+pod 'GBKRouterProtocol', :git => 'git@gitlab.gbksoft.net:gbksoft-mobile-department/ios/gbkrouterprotocol.git'
 ```
 
 Then, run the following command:
@@ -48,80 +35,62 @@ $ pod install
 ## Use
 
 ### Setup
+Usage of library require `import GBKRouterProtocol` somewhere in the source file.
 
-Імпортування framework:
-
-```swift
-import GBKRouterProtocol
-```
 ### Naming
 
-Неймінг який потрібно використовувати для Router+Storyboard:
-- (Modul_Name)Router.swift
-- (Modul_Name).storyboard
+For Router should be used next naming:
+- (Module_Name)Router.swift
 
-> Наприклад:
->  - AuthRouter.swift
->  - Auth.storyboard
-
-### Roter + Storyboard
-
-В Storyboard в View Controller назва Class і Storyboard ID мають бути однакові. Наприклад: LoginViewController.
-![ROUTER PROTOCOL iOS](http://gbksoft.net/downloads/zakhliupanyi-av/routerinstoryboard.png)
+> For example:
+>  - LoginRouter.swift
 
 ### Code
 
-Далі в файлі (Modul_Name)Router.swift описуємо реалізацію:
-
-Якщо context - UIViewController.
+If context is `UIViewController`
 
 ```swift
 import UIKit
 import GBKRouterProtocol
 
-struct AuthRouter: GBKRouterProtocol {
+struct LoginRouter: GBKRouterProtocol {
 
     var context: UIViewController!
 
-    init() {}
-
     func openLogin() {
-        let loginController = getController(type: LoginViewController.self)!
+        let loginController = LoginViewController()
         present(controller: loginController)
     }
 }
 ```
 
-Якщо context - UINavigationController.
+If context is `UINavigationController`
 
 ```swift
 import UIKit
 import GBKRouterProtocol
 
-struct AuthRouter: GBKRouterProtocol {
+struct LoginRouter: GBKRouterProtocol {
 
     var context: UINavigationController!
 
-    init() {}
-
     func openLogin() {
-        let loginController = getController(type: LoginViewController.self)!
+        let loginController = LoginViewController()
         push(controller: loginController)
     }
 }
 ```
 
-Далі в коді для відкриття екрану Login пишемо:
+Next in code we should call:
 
 ```swift
 // For UIViewController
-AuthRouter(in: self).openLogin().
+LoginRouter(in: self).openLogin(). // where self is current UIViewController
 
 // For UINavigationController
-AuthRouter(in: navigationController).openLogin()
+LoginRouter(in: navigationController).openLogin()
 ```
->  self - це поточний View Controller.
 
 
 ## To Do
-- Зробити extension для UITabBarController
+- extension for UITabBarController
